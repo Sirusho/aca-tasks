@@ -11,21 +11,6 @@ public class Task16 {
         for (int i = 0; i < n; i++) {
             arr[i] = scanner.nextInt();
         }
-        //int count = 0;
-        /*for (int i = 0; i < n; i++) {
-            if (arr[i] != 0) {
-                arr[count++] = arr[i];
-            }
-        }
-        while (count < n) {
-            arr[count++] = 0;
-        }
-
-        for(int i=0; i<n; i++){
-            System.out.println(arr[i]);
-        }
-
-         */
                 int count = 0;
                 int temp;
                 for (int i = 0; i < n; i++) {
@@ -33,7 +18,7 @@ public class Task16 {
                         temp = arr[count];
                         arr[count] = arr[i];
                         arr[i] = temp;
-                        count = count + 1;
+                        count++;
                     }
                 }
                 for(int i=0; i<n; i++){
