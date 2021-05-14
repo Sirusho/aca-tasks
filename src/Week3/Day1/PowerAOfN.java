@@ -5,7 +5,7 @@ import java.util.Scanner;
 /*
 Write a function static double(double a, int n) calculating the value of a to the power of n
  */
-public class Task2 {
+public class PowerAOfN {
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);
         System.out.println("Input Value");

@@ -7,7 +7,7 @@ import java.util.Scanner;
  Write a method called copyOf(), which takes an int Array and returns a copy of the given array. The method's signature is as follows:
 public static int[] copyOf(int[] array)
  */
-public class Task14 {
+public class CopyArray {
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);
         System.out.println("Input array's size");

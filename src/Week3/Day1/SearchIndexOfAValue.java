@@ -9,7 +9,7 @@ and returns the array index if the array contains the given int;
 public static int search(int[] array, int key);
 Also write a test driver to test this method
  */
-public class Task13 {
+public class SearchIndexOfAValue {
     public static void main(String[] args) {
         int arr[]={1, 3, 6, -5, 0};
         Scanner scanner=new Scanner(System.in);

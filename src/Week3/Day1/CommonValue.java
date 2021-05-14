@@ -6,7 +6,7 @@ import java.util.Scanner;
 Write a function  which returns the value (true or false) which is more common among the values ​​of its arguments x, y, z.
 static boolean election(boolean x, boolean y, boolean z).
  */
-public class Task4 {
+public class CommonValue {
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);
         System.out.println("Input 3 booleans");

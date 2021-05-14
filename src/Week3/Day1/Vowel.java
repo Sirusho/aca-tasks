@@ -8,7 +8,7 @@ Write a value-returning method,
  isVowel that returns the value
  true if a given character is a vowel, and otherwise returns false.
  */
-public class Task8 {
+public class Vowel {
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);
         System.out.println("Input a character");

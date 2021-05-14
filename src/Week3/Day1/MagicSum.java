@@ -2,7 +2,7 @@ package Week3.Day1;
 
 import java.util.Scanner;
 
-public class Task11 {
+public class MagicSum {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         boolean flag = true;

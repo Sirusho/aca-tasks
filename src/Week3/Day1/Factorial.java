@@ -5,7 +5,7 @@ import java.util.Scanner;
 /*
 Write a function int factorial(int a), which return factorial of a
  */
-public class Task7 {
+public class Factorial {
 
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);

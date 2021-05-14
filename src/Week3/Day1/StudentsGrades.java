@@ -2,18 +2,20 @@ package Week3.Day1;
 
 import java.util.Scanner;
 
-public class Task15 {
+public class StudentsGrades {
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);
         System.out.println("Input number of students");
         int n = scanner.nextInt();
         int [] grades=new int[n];
         for(int i=0; i<n; i++){
+            System.out.println("Input grades");
             grades[i]=scanner.nextInt();
         }
         System.out.println("max = "  + maxGrade(grades));
         System.out.println("min = " + minGrade(grades));
-        System.out.println("Average = " + avgGrade(grades));
+        System.out.print("Average = ");
+        System.out.println(String.format("%.2f" , avgGrade(grades)));
     }
     public static int maxGrade(int arr[]){
         int max=arr[0];
@@ -34,12 +36,13 @@ public class Task15 {
         return min;
     }
 
-    public static int avgGrade(int arr[]){
+    public static double avgGrade(int arr[]){
         int avg=0;
         for(int i=0; i<arr.length; i++){
             avg+=arr[i];
         }
-        return avg/(arr.length);
+        avg/=arr.length;
+        return avg;
     }
 
 }

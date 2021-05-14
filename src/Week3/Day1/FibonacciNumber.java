@@ -6,7 +6,7 @@ import java.util.Scanner;
 Write function int fib(int n), which for a given natural n returns  n th element.
 Example Input` 3  Output` 2
  */
-public class Task6 {
+public class FibonacciNumber {
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);
         System.out.println("Input a number");
