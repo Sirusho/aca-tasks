@@ -9,9 +9,15 @@ Given a string containing only English letters (uppercase and lowercase) and ope
  */
 public class Task16 {
     public static void main(String[] args) {
-
+        Scanner scanner=new Scanner(System.in);
+        System.out.println("input a string");
+        String input = scanner.nextLine();
+        System.out.println(reverseBrackets(input));
     }
-    static String reverseBrackets(String string){
-        return string;
+    static String reverseBrackets(String str){
+        if(str.length()==1){
+            return str+ str;
+        }
+        return str.charAt(0)+ reverseBrackets(str.substring(1)) + (str.charAt(0)=='('?')':str.charAt(0));
     }
 }

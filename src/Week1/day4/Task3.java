@@ -1,7 +1,4 @@
-package day4;
-
-import java.util.Random;
-import java.util.jar.JarOutputStream;
+package Week1.day4;
 
 
 public class Task3 {

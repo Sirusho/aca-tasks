@@ -19,25 +19,12 @@ public class Task15 {
         String input = scanner.nextLine();
         System.out.println(addParentheses(input));
     }
-    static StringBuilder newText=new StringBuilder("");
-    static int i=0;
-    static String addParentheses(String string){
-        if(string.length()%2==0){
-
+    static String addParentheses(String string) {
+        if (string.length() <= 2) {
+            return "(" + string + ")";
         }
-        if(string.length()== string.length()/2){
-            return newText.toString();
-        }
-        //abcde (a (b(c)d)
-        if(i<string.length()/2){
-            newText.append("(" + string.charAt(0));
-            return addParentheses(string.substring(1));
-        }else if(i>=(string.length()/2) && i<string.length()){
-            newText.append(")" + string.charAt(0) + ")");
-            return addParentheses(string.substring(1));
-        }
-        i++;
-        return newText.toString();
+        return "(" + string.charAt(0) + addParentheses(string.substring(1, string.length() - 1))
+                + string.charAt(string.length() - 1) + ")";
     }
 
 }

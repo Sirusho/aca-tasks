@@ -1,4 +1,4 @@
-package com.company.Day2;
+package Week1.day2;
 
 public class Task7 {
     public static void main(String[] args) {

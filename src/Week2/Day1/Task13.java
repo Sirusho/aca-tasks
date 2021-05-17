@@ -15,12 +15,11 @@ public class Task13 {
         System.out.println("Input a number");
         int x = scanner.nextInt();
         int y = scanner.nextInt();
-        int days = 0;
-        float sum = x;
+        int days = 1;
         float dist = x;
-        while (sum <= y) {
+        while (dist < y) {
             dist += dist * 10 / 100;
-            sum += dist;
+            x += dist;
             days++;
         }
         System.out.println(days);
