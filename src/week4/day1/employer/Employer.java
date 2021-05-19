@@ -1,4 +1,4 @@
-package week4.day1;
+package week4.day1.employer;
 /*
 Define a Employer.java class which
 Has  fields name, age, workPlace, salary.

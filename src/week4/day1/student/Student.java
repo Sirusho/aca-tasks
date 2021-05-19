@@ -1,4 +1,4 @@
-package week4.day1;
+package week4.day1.student;
 
 import java.util.Arrays;
 
@@ -24,5 +24,12 @@ public class Student {
         this.weight = weight;
     }
 
-
+    @Override
+    public String toString() {
+        return "Student{" +
+                "age=" + age +
+                ", name='" + name + '\'' +
+                ", weight=" + weight +
+                '}';
+    }
 }

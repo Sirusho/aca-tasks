@@ -1,4 +1,4 @@
-package week4.day1;
+package week4.day1.student;
 
 public class Sort {
     void sort(Student arr[], int age){

@@ -1,4 +1,4 @@
-package week4.day1;
+package week4.day1.shop;
 
 import java.util.Scanner;
 
@@ -8,16 +8,6 @@ Define a Shop.java class which
 Has a fields name, address, countOfProduct,
 priceForProduct, shopBalance.
 define constructors with all possible fields
-
-write method checkOrder() which will take as a parameter count of order,
-and will give a response whether they have such an amount of product or not.
-if they have that amount they ask “if you want to buy it,
-Please press 1 , if you don’t want to buy it press any bottom”.
-if they don’t have that amount of product, response` “Now we don’t have so much product,sorry ”
-if they pressed 1, calculate price for order using calculateOrder() method,
- also add that count of money to your shopBalance using addToShopBalance() method
-create class definition diagram
-
  */
 public class Shop {
     String name;
@@ -41,10 +31,11 @@ public class Shop {
         }
 
     }
-    int calculateOrder(int countOfProduct, int priceForProduct){
+    private int calculateOrder(int countOfProduct, int priceForProduct){
+        System.out.println( this.countOfProduct*this.priceForProduct);
         return this.countOfProduct*this.priceForProduct;
     }
-    void addToShopBalance(){
+    private void addToShopBalance(){
         this.shopBalance=calculateOrder(this.countOfProduct, this.priceForProduct);
     }
     public Shop(String name) {

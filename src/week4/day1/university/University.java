@@ -1,4 +1,4 @@
-package week4.day1;
+package week4.day1.university;
 
 import java.util.Scanner;
 
@@ -13,9 +13,6 @@ write a function admission() (Ընդունելություն) , which will sugge
 “Computer science -- 2”
 etc..
 then give an ability for user to choose which profession he/ she wants,
-if user choose one of these versions then print “Input your age” he must inputs his age, you must verify and then register him
-add register() method which will change countOfStudents field
-after these steps call display() method to see all changes
  */
 public class University {
     String name;
@@ -32,34 +29,39 @@ public class University {
         this.minAgeOfStudents = minAgeOfStudents;
     }
 
-    void printInfo(University university){
-        System.out.println(university.name + " " + university.countOfStudents + " " + university.maxCountOfStudents +
-                university.maxAgeOfStudents + university.minAgeOfStudents);
+    void printInfo(University university) {
+        System.out.println(university.name + " Students count -> " + university.countOfStudents +
+                " Max Students count -> " + university.maxCountOfStudents + "Max Age of Students -> "
+                + university.maxAgeOfStudents + " Min age of students -> " + university.minAgeOfStudents);
     }
-    boolean isValidAge(int age){
-        if(age>=minAgeOfStudents && age<=maxAgeOfStudents){
 
+    boolean isValidAge(int age) {
+        if (age >= minAgeOfStudents && age <= maxAgeOfStudents) {
+            System.out.println("You've registered");
+            countOfStudents++;
             return true;
         }
         System.out.println("You can't register");
         return false;
     }
-    void admission(){
+
+    void admission() {
         System.out.println("Applied Mathematics -- 1 \n" +
                 "Computer science -- 2 \n" + "Business -- 3 \n");
-        Scanner scanner=new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Choose your profession");
         String input = scanner.nextLine();
-        switch(input){
+        switch (input) {
             case "1":
             case "2":
             case "3":
-                int age = scanner.nextInt();
                 System.out.println("Input your age");
+                int age = scanner.nextInt();
                 isValidAge(age);
         }
     }
-    void addRegister(){
+
+    void addRegister() {
         countOfStudents++;
     }
 }

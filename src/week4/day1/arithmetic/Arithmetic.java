@@ -1,4 +1,6 @@
-package week4.day1;
+package week4.day1.arithmetic;
+
+import week4.day1.student.Sort;
 
 import java.util.Scanner;
 
@@ -30,59 +32,88 @@ public class Arithmetic {
     public Arithmetic(int[] arr) {
         this.arr = arr;
     }
-    void bubbleSort(int arr[]){
-        for(int i=1; i<arr.length; i++){
-            for(int j=0; j<arr.length-1; j++){
-                if(arr[j]>arr[j+1]){
-                    int temp=arr[j+1];
-                    arr[j+1]=arr[j];
-                    arr[j]=temp;
+
+    void bubbleSort(int arr[]) {
+        for (int i = 1; i < arr.length; i++) {
+            for (int j = 0; j < arr.length - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j + 1];
+                    arr[j + 1] = arr[j];
+                    arr[j] = temp;
                 }
             }
         }
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
     }
-    void min(int arr[]){
-        int min=arr[0];
-        for(int i=1;i<arr.length; i++ ){
-            if(min>arr[i]){
-                min=arr[i];
+
+    void min(int arr[]) {
+        int min = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (min > arr[i]) {
+                min = arr[i];
             }
         }
         System.out.println("Min = " + min);
     }
-    void max(int arr[]){
-        int max=arr[0];
-        for(int i=1;i<arr.length; i++ ){
-            if(max<arr[i]){
-                max=arr[i];
+
+    void max(int arr[]) {
+        int max = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (max < arr[i]) {
+                max = arr[i];
             }
         }
         System.out.println("Max = " + max);
     }
-    void average(int arr[]){
-        int sum=0;
-        for(int i=0; i<arr.length; i++){
-            sum+=arr[i];
+
+    void average(int arr[]) {
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i];
         }
-        System.out.println("average = " + sum/arr.length );
+        System.out.println("average = " + sum / arr.length);
     }
 
-    void checkArithmeticProgression(int arr[]){
-        int dif=arr[1]-arr[0];
-        for(int i=2; i<arr.length; i++){
-            if(arr[i]-arr[i-1]!=dif){
+    int binarySearch(int[] arr, int number) {
+        bubbleSort(arr);
+        int left = 0;
+        int right = arr.length - 1;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (arr[mid] == number) {
+                System.out.println("The number is present at position " + mid);
+                return mid;
+            }
+            if (arr[mid] < number) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+        System.out.println("The number is not present in the array");
+        return -1;
+    }
+
+    void checkArithmeticProgression(int arr[]) {
+        int dif = arr[1] - arr[0];
+        for (int i = 2; i < arr.length; i++) {
+            if (arr[i] - arr[i - 1] != dif) {
                 System.out.println("There is not arithmetic progression in the array");
             }
         }
         System.out.println("Arithmetic progression");
     }
-    void options(){
-        System.out.println("Bubble sort -- 1 \n " +
-                "Min -- 2 \n" + "Max -- 3 \n" + "Average -- 4 \n" + "Arithmetic Progression -- 5" );
-        Scanner scanner=new Scanner(System.in);
-        System.out.println("Choose");
+
+    void options() {
+        System.out.println("Bubble sort -- 1 \n" +
+                "Min -- 2 \n" + "Max -- 3 \n" + "Average -- 4 \n" + "Arithmetic Progression -- 5 \n" +
+                "Binary Search -- 6");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("\n ---Choose an option--- \n");
         String input = scanner.nextLine();
-        switch (input){
+        switch (input) {
             case "1":
                 bubbleSort(arr);
                 break;
@@ -98,8 +129,10 @@ public class Arithmetic {
             case "5":
                 checkArithmeticProgression(arr);
                 break;
+            case "6":
+                System.out.println("Input a number to find in an array");
+                int num = scanner.nextInt();
+                binarySearch(arr, num);
         }
     }
-
-
 }
